@@ -1,0 +1,16 @@
+<h1>商品一覧</h1>
+<% @items.each do |item| %>
+ <P>商品名</P>
+ <span><%= item.name %></span>
+
+ <p>商品説明</p>
+ <span><%= item.introduction %></span>
+
+ <p>税抜き価格</p>
+ <span><%= item.price %></span>
+
+ <P>販売ステータス</P>
+ <span><%= item.is_active %></span>
+
+ <%= link_to"詳細", admin_item_path(item.id) %> | <%= link_to "編集", edit_admin_item_path(item.id) %>
+<% end %>

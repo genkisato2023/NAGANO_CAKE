@@ -1,0 +1,8 @@
+<h2>注文履歴</h2>
+
+<%= @orders.each do |order| %>
+<p><%= order.name %></p>
+<p><%= order.created_at %></p>
+<p><%= order_detail.quantity %></p>
+<p><%= link_to "詳細", admin_order_path(order.id) %></p>
+<% end %>

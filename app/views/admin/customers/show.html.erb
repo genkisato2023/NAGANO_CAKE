@@ -1,0 +1,24 @@
+<h2>顧客詳細</h2>
+<h3>姓</h3>
+<p><%= @customer.last_name %></p>
+<h3>名</h3>
+<p><%= @customer.first_name %></p>
+<h3>姓カナ</h3>
+<p><%= @customer.last_name_kana %></p>
+<h3名カナ</h3>
+<p><%= @customer.first_name_kana %></p>
+<h3>メールアドレス</h3>
+<p><%= @customer.email %></p>
+<h3>パスワード</h3>
+<p><%= @customer.encrypted_password %></p>
+<h3>郵便番号</h3>
+<p><%= @customer.postal_code %></p>
+<h3>住所</h3>
+<p><%= @customer.address %></p>
+<h3>電話番号</h3>
+<p><%= @customer.telephone_number %></p>
+<h3>会員ステータス</h3>
+<p><%= @customer.is_deleted %></p>
+
+<p><%= link_to "編集", edit_admin_customer_path(customer.id) %></p> | 
+<p><%= link_to "戻る", admin_customers_path %></p>
