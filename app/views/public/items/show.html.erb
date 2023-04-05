@@ -1,0 +1,24 @@
+<h2>商品名</h2>
+<p><%= @item.name %></p>
+
+<h2>商品説明</h2>
+<p><%= @item.introduction %></p>
+<% if @item.image.attached? %>
+    <%= image_tag item.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200x200" %>
+  <% end %><br>
+
+<h2>税抜き価格</h2>
+<p><%= @item.price %></p>
+
+<h2>販売ステータス</h2>
+<p><%= @item.is_active %></p>
+
+ <%= form_with model: @cart_item do |f| %>
+ 　<%= f.select :amount, *[1..10] %>
+ 　<%= f.hidden_field :item_id, :value => @item.id %>
+　<%= f.submit 'カートへ追加' %>
+<% end %>
+
+ <%= link_to "商品一覧へ", admin_items_path %>
